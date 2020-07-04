@@ -9,7 +9,7 @@ echo "\e[96m               * JARE WONG TUWO!!        \n";
 echo "\e[96m ***\e[95m".date('[d-m-Y] [H:i:s]')."\e[96m***\n";
 echo "\e[95m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
 echo "\e[96m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
-echo "\e[93m            \e[96m  SIAP-SIAP? \e[93m \n";
+echo "\e[93m            \e[96m  SIAP-SIAP YO GAES? \e[93m \n";
 echo "\e[96m  ==============================================\n";
 echo "\e[96m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
 echo "\e[95m GHOIB VOCER? Id (Y/N ?: ";	
@@ -34,14 +34,14 @@ if($user == "")
 else
 {
 		echo "\e[91m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
-	        echo "\e[96m    [🚫] \e[91mPENCET ENTER ASW     \e[96m [🚫]\n";
+	        echo "\e[96m    [🚫] \e[91mPENCET ENTER NEH     \e[96m [🚫]\n";
 		echo "\e[91m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
 goto login;
 }
 	return rtrim( $input, "\n" );
 ulang:
 echo "\n";
-echo "\e[96m (ADA KALANYA KALIAN BERUNTUNG DAN TIDAK$input)        \n";
+echo "\e[96m (KADANG METU KADANG YO GAK METU$input)        \n";
 echo "\e[89m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
 // function change(){
         $nama = nama();
@@ -73,14 +73,14 @@ echo "\e[89m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬�
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
-        echo color("green","📶▶️ OTP DIKIRIM TUH ")."\n";
+        echo color("green","📶▶️ OTP WES DIKIRIM ")."\n";
         otp:
-        echo color("yellow","💬▶️ OTP BRO : ");
+        echo color("yellow","💬▶️ OTP OM : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
         if(strpos($verif, '"access_token"')){
-        echo color("green","✔️ BERHASIL NGEDAFTAR \n");
+        echo color("green","✔️ BERHASIL DAFTAR GAES\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("red","+] TOKE ID : ".$token."\n\n");
@@ -115,7 +115,7 @@ echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬* BISMILLAH *▬▬▬�
         echo "\n".color("red","🔐▶️ Message: ".$message);
         gofood:
         echo "\n".color("nevy","=>BISMILLAH");
-        echo "\n".color("yellow","Amin");
+        echo "\n".color("yellow","BISMILLAH");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(15);
